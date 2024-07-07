@@ -14,7 +14,7 @@
         android:layout_marginStart="87dp"
         android:layout_marginTop="211dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Conexiones buenas: 0"
+        android:text="Respuestas Correctas: 0"
         android:textColor="@color/black"
         android:textSize="18sp" />
 
@@ -27,7 +27,7 @@
         android:layout_marginStart="87dp"
         android:layout_marginTop="141dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Conexiones malas: 0"
+        android:text="Respuesatas Incorrectas: 0"
         android:textColor="@color/black"
         android:textSize="18sp" />
 
@@ -66,5 +66,17 @@
         android:layout_marginTop="0dp"
         android:background="#FF482E"
         android:orientation="horizontal"></LinearLayout>
+
+    <TextView
+        android:id="@+id/mensaje"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="87dp"
+        android:layout_marginBottom="70dp"
+        android:textColor="#292222"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -172,6 +172,7 @@ public class PareoActivity extends AppCompatActivity {
         intent.putExtra("goodConnections", currentGoodConnections);
         intent.putExtra("badConnections", currentBadConnections);
         startActivity(intent);
+        finish();
     }
 
     private class DrawingView extends View {
