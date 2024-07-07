@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.074"
-        tools:srcCompat="@android:drawable/alert_dark_frame" />
+        android:src="@android:drawable/alert_dark_frame" />
 
     <TextView
         android:id="@+id/textViewTrain"
@@ -41,7 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.261"
-        tools:srcCompat="@android:drawable/alert_light_frame" />
+        android:src="@android:drawable/alert_light_frame" />
 
     <TextView
         android:id="@+id/textViewCar"
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.446"
-        tools:srcCompat="@android:drawable/arrow_down_float" />
+        android:src="@android:drawable/arrow_down_float" />
 
     <TextView
         android:id="@+id/textViewPlane"
@@ -89,7 +89,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.627"
-        tools:srcCompat="@android:drawable/arrow_up_float" />
+        android:src="@android:drawable/arrow_up_float" />
 
     <TextView
         android:id="@+id/textViewBoat"
@@ -113,7 +113,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.806"
-        tools:srcCompat="@android:drawable/btn_dialog" />
+        android:src="@android:drawable/btn_dialog" />
 
     <TextView
         android:id="@+id/textViewBike"
