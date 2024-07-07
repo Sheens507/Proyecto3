@@ -130,6 +130,7 @@ public class DragActivity extends AppCompatActivity {
                 intent.putExtra("goodConnections", totalGoodConnections);
                 intent.putExtra("badConnections", totalBadConnections);
                 startActivity(intent);
+                finish();
             }
         });
     }
