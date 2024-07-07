@@ -29,7 +29,9 @@ public class PareoActivity extends AppCompatActivity {
     private int initialGoodConnections;
     private int initialBadConnections;
     private int currentGoodConnections; // Variable para mantener el conteo actualizado
-    private int currentBadConnections;   // Variable para mantener el conteo actualizado
+    private int currentBadConnections;  // Variable para mantener el conteo actualizado
+
+    private final int TOTAL_CONNECTIONS = 5; // Total de conexiones requeridas
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,7 +148,7 @@ public class PareoActivity extends AppCompatActivity {
             ImageView imageView = connection.first;
             TextView textView = connection.second;
 
-            // Obtener la etiqueta de la imagen (puedes usar cualquier propiedad de la imagen que definas)
+            // Obtener la etiqueta de la imagen
             String imageTag = (String) imageView.getTag();
 
             // Comparar el texto de la TextView con la etiqueta de la imagen para determinar la conexión
@@ -161,7 +163,11 @@ public class PareoActivity extends AppCompatActivity {
             }
         }
 
-        // Crear un Intent para iniciar SecondActivity y pasar datos
+        // Calcular conexiones faltantes y sumarlas a badConnections
+        int missingConnections = TOTAL_CONNECTIONS - connections.size();
+        currentBadConnections += missingConnections;
+
+        // Crear un Intent para iniciar DragActivity y pasar datos
         Intent intent = new Intent(PareoActivity.this, DragActivity.class);
         intent.putExtra("goodConnections", currentGoodConnections);
         intent.putExtra("badConnections", currentBadConnections);

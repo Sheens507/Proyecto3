@@ -21,9 +21,13 @@ public class DragActivity extends AppCompatActivity {
     // Etiqueta esperada para comparar
     private String expectedTag = "imagen1"; // Cambia esto por la etiqueta que deseas comparar
 
-    // Contadores de conexiones
-    private int goodConnections;
-    private int badConnections;
+    // Contadores de conexiones acumulados
+    private int totalGoodConnections;
+    private int totalBadConnections;
+
+    // Contadores de conexiones locales (dentro de esta actividad)
+    private int localGoodConnections;
+    private int localBadConnections;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +45,12 @@ public class DragActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null) {
             // Acumular los valores en las variables de clase
-            goodConnections = intent.getIntExtra("goodConnections", 0);
-            badConnections = intent.getIntExtra("badConnections", 0);
+            totalGoodConnections = intent.getIntExtra("goodConnections", 0);
+            totalBadConnections = intent.getIntExtra("badConnections", 0);
 
             // Mostrar los datos en TextViews
-            textViewGoodConnections.setText("Conexiones buenas: " + goodConnections);
-            // textViewBadConnections.setText("Conexiones malas: " + badConnections);
+            textViewGoodConnections.setText("Conexiones buenas: " + totalGoodConnections);
+            // textViewBadConnections.setText("Conexiones malas: " + totalBadConnections);
         }
 
         // Configura la etiqueta para cada ImageView
@@ -81,9 +85,12 @@ public class DragActivity extends AppCompatActivity {
         imageViewDropArea.setOnDragListener(new View.OnDragListener() {
             @Override
             public boolean onDrag(View v, DragEvent event) {
-                int action = event.getAction();
-                switch (action) {
+                switch (event.getAction()) {
                     case DragEvent.ACTION_DROP:
+                        // Resetear los contadores locales
+                        localGoodConnections = 0;
+                        localBadConnections = 0;
+
                         View view = (View) event.getLocalState();
                         if (view instanceof ImageView) {
                             ImageView draggedImageView = (ImageView) view;
@@ -91,15 +98,19 @@ public class DragActivity extends AppCompatActivity {
 
                             if (imageTag != null && imageTag.equals(expectedTag)) {
                                 // La conexión es correcta
-                                goodConnections++;
+                                localGoodConnections++;
                             } else {
                                 // La conexión es incorrecta
-                                badConnections++;
+                                localBadConnections++;
                             }
 
                             // Actualiza la imagen en imageViewDropArea
                             Drawable drawable = draggedImageView.getDrawable();
                             imageViewDropArea.setImageDrawable(drawable);
+
+                            // Mostrar los datos actualizados en TextViews
+                            textViewGoodConnections.setText("Conexiones buenas: " + (totalGoodConnections + localGoodConnections));
+                            // textViewBadConnections.setText("Conexiones malas: " + (totalBadConnections + localBadConnections));
                         }
                         break;
                 }
@@ -110,12 +121,15 @@ public class DragActivity extends AppCompatActivity {
         btnCalculateStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abrir la nueva actividad ScoreActivity y pasar los valores
+                // Sumar los contadores locales a los acumulados
+                totalGoodConnections += localGoodConnections;
+                totalBadConnections += localBadConnections;
+
+                // Abrir la nueva actividad ScoreActivity y pasar los valores acumulados
                 Intent intent = new Intent(DragActivity.this, ScoreActivity.class);
-                intent.putExtra("goodConnections", goodConnections);
-                intent.putExtra("badConnections", badConnections);
+                intent.putExtra("goodConnections", totalGoodConnections);
+                intent.putExtra("badConnections", totalBadConnections);
                 startActivity(intent);
-                finish();
             }
         });
     }
