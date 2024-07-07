@@ -3,15 +3,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@color/black">
+    android:background="#FD998B">
 
     <TextView
         android:id="@+id/textViewGoodConnections"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="211dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="Conexiones buenas: 0"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp" />
 
     <TextView
@@ -19,24 +23,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewGoodConnections"
-        android:layout_marginTop="96dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="141dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="Conexiones malas: 0"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/buttonNextActivity"
-        android:layout_width="177dp"
-        android:layout_height="85dp"
+        android:id="@+id/inicio"
+        android:layout_width="159dp"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="107dp"
-        android:layout_marginTop="321dp"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="341dp"
-        android:onClick="goToThirdActivity"
-        android:text="Next Activity" />
+        android:layout_marginStart="111dp"
+        android:layout_marginTop="535dp"
+        android:backgroundTint="#872202"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Inicio" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="85dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Resultados"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="19dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="0dp"
+        android:background="#FF482E"
+        android:orientation="horizontal"></LinearLayout>
 
 </RelativeLayout>

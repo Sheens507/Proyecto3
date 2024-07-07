@@ -11,7 +11,7 @@ public class ScoreActivity extends AppCompatActivity {
 
     private TextView textViewGoodConnections;
     private TextView textViewBadConnections;
-    private Button buttonNextActivity;
+    private Button inicio;
     private int goodConnections=0;
     private int badConnections=0;
 
@@ -22,7 +22,7 @@ public class ScoreActivity extends AppCompatActivity {
 
         textViewGoodConnections = findViewById(R.id.textViewGoodConnections);
         textViewBadConnections = findViewById(R.id.textViewBadConnections);
-        buttonNextActivity = findViewById(R.id.buttonNextActivity);
+        inicio = findViewById(R.id.inicio);
 
         // Recibir los datos enviados desde MainActivity
         Intent intent = getIntent();
@@ -35,7 +35,13 @@ public class ScoreActivity extends AppCompatActivity {
             textViewBadConnections.setText("Conexiones malas: " + badConnections);
         }
 
-        // Configurar el click listener para el botón
-
+        inicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Iniciar la actividad principal
+                Intent intent = new Intent(ScoreActivity.this, Home.class);
+                startActivity(intent);
+            }
+        });
     }
 }
