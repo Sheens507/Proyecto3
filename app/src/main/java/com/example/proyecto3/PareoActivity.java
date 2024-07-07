@@ -49,23 +49,23 @@ public class PareoActivity extends AppCompatActivity {
 
         // Resto del código de inicialización de vistas y listeners...
         ImageView imageViewTrain = findViewById(R.id.imageViewTrain);
-        imageViewTrain.setTag("Tren");
+        imageViewTrain.setTag("Train");
         TextView textViewTrain = findViewById(R.id.textViewTrain);
 
         ImageView imageViewCar = findViewById(R.id.imageViewCar);
-        imageViewCar.setTag("Carro");
+        imageViewCar.setTag("Car");
         TextView textViewCar = findViewById(R.id.textViewCar);
 
         ImageView imageViewPlane = findViewById(R.id.imageViewPlane);
-        imageViewPlane.setTag("Avión");
+        imageViewPlane.setTag("Airplane");
         TextView textViewPlane = findViewById(R.id.textViewPlane);
 
         ImageView imageViewBoat = findViewById(R.id.imageViewBoat);
-        imageViewBoat.setTag("Bote");
+        imageViewBoat.setTag("Boat");
         TextView textViewBoat = findViewById(R.id.textViewBoat);
 
         ImageView imageViewBike = findViewById(R.id.imageViewBike);
-        imageViewBike.setTag("Bicicleta");
+        imageViewBike.setTag("Bike");
         TextView textViewBike = findViewById(R.id.textViewBike);
 
         btnCalculateStats = findViewById(R.id.btnCalculateStats);
