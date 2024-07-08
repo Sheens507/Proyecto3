@@ -10,15 +10,15 @@
         android:id="@+id/imageViewDropArea"
         android:layout_width="279dp"
         android:layout_height="182dp"
-        android:background="@android:drawable/alert_dark_frame"
+        android:background="@drawable/border"
         android:contentDescription="Drop Area"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@drawable/drop_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.369" />
+        app:layout_constraintVertical_bias="0.384" />
 
     <TextView
         android:id="@+id/textView2"
@@ -27,7 +27,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="Train"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -107,10 +107,10 @@
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.795"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.91" />
+        app:layout_constraintVertical_bias="0.909" />
 
     <TextView
         android:id="@+id/textView3"
@@ -129,19 +129,33 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="349dp"
+        android:layout_width="348dp"
         android:layout_height="55dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Arrastra la imagen correcta dependiendo del texto que se muestre."
-        android:textAlignment="center"
+        android:justificationMode="inter_word"
+        android:text="Arrastra la imagen correcta hacia el espacio dependiendo del siguiente texto."
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.125" />
+
+    <Button
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#872202"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.909" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
