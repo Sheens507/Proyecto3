@@ -25,7 +25,7 @@ public class PareoActivity extends AppCompatActivity {
 
     private List<Pair<ImageView, TextView>> connections = new ArrayList<>();
     private DrawingView lineView;
-    private Button btnCalculateStats;
+    private Button btnCalculateStats, closeButton;
     private int initialGoodConnections;
     private int initialBadConnections;
     private int currentGoodConnections; // Variable para mantener el conteo actualizado
@@ -83,6 +83,13 @@ public class PareoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 calculateStats();
+            }
+        });
+        closeButton = findViewById(R.id.close_button);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Cierra la actividad actual
             }
         });
     }

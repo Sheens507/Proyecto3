@@ -39,16 +39,17 @@
 
     <Button
         android:id="@+id/inicio"
-        android:layout_width="159dp"
-        android:layout_height="60dp"
+        android:layout_width="123dp"
+        android:layout_height="58dp"
         android:backgroundTint="#872202"
         android:fontFamily="@font/poppins_semibold"
         android:text="Inicio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.781"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintVertical_bias="0.924" />
 
     <TextView
         android:id="@+id/mensaje"
@@ -93,5 +94,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.164" />
+
+    <Button
+        android:id="@+id/close_button"
+        android:layout_width="123dp"
+        android:layout_height="58dp"
+        android:backgroundTint="#872202"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.926" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

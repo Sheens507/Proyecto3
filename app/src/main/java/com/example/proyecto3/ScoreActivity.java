@@ -12,7 +12,7 @@ public class ScoreActivity extends AppCompatActivity {
     private TextView textViewGoodConnections;
     private TextView textViewBadConnections;
     private TextView textViewMesaje;
-    private Button inicio;
+    private Button inicio, closeButton;
     private int goodConnections=0;
     private int badConnections=0;
 
@@ -25,6 +25,8 @@ public class ScoreActivity extends AppCompatActivity {
         textViewBadConnections = findViewById(R.id.textViewBadConnections);
         textViewMesaje = findViewById(R.id.mensaje);
         inicio = findViewById(R.id.inicio);
+        closeButton = findViewById(R.id.close_button);
+
 
         // Recibir los datos enviados desde MainActivity
         Intent intent = getIntent();
@@ -45,13 +47,19 @@ public class ScoreActivity extends AppCompatActivity {
 
         }
 
-
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Iniciar la actividad principal
                 Intent intent = new Intent(ScoreActivity.this, Home.class);
                 startActivity(intent);
+            }
+        });
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Cierra la actividad actual
             }
         });
     }

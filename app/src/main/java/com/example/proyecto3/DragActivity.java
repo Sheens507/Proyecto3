@@ -15,7 +15,7 @@ public class DragActivity extends AppCompatActivity {
 
     private ImageView imageViewDropArea;
     private ImageView imageView1, imageView2, imageView3;
-    private Button btnCalculateStats;
+    private Button btnCalculateStats, closeButton;
     private TextView textViewGoodConnections;
 
     // Etiqueta esperada para comparar
@@ -131,6 +131,14 @@ public class DragActivity extends AppCompatActivity {
                 intent.putExtra("badConnections", totalBadConnections);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        closeButton = findViewById(R.id.close_button);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Cierra la actividad actual
             }
         });
     }
